@@ -1,0 +1,156 @@
+@font-face {
+	font-family: "Inter";
+	src: url(fonts/Inter/static/Inter-Medium.ttf);
+}
+
+@font-face {
+	font-family: "Bebas Neue";
+	src: url(fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+}
+
+/* ==================================================
+    "RESET" STYLING
+================================================== */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Inter";
+	font-size: 18px;
+	line-height: 100%;
+	color: #000;
+	text-decoration: none;
+	list-style: none;
+}
+
+body {
+	background-color: #eee;
+}
+
+.site-wrapper {
+	overflow-x: hidden;
+}
+
+/* ==================================================
+    HEADER STYLING
+================================================== */
+
+header {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 100px;
+	background-color: #fff;
+	user-select: none;
+}
+
+header nav {
+	display: flex;
+	flex: 100;
+	justify-content: center;
+	align-items: center;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 25px;
+	position: relative;
+}
+
+.logo {
+	position: absolute;
+	left: 25px;
+	font-family: "Bebas Neue";
+	font-size: 50px;
+	letter-spacing: 5px;
+}
+
+.nav-links {
+	display: flex;
+	gap: 100px;
+}
+
+/*poop*/
+
+.burger-btn {
+	display: none;
+	position: absolute;
+	right: 25px;
+	cursor: pointer;
+	user-select: none;
+}
+
+.burger-layer {
+	width: 50px;
+	height: 6px;
+	border-radius: 6px;
+	margin: 8px 0;
+	background-color: #000;
+	transition: 0.3s;
+}
+
+.burger-btn.active .burger-layer:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-btn.active .burger-layer:nth-child(1) {
+    transform: translateY(14px) rotate(45deg);
+}
+
+.burger-btn.active .burger-layer:nth-child(3) {
+    transform: translateY(-14px) rotate(-45deg);
+}
+
+/* ==================================================
+    MAIN STYLING
+================================================== */
+
+main {
+	max-width: 1000px;
+	margin: 100px auto;
+	padding: 0 25px;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+p {
+	text-align: justify;
+	line-height: 125%;
+}
+
+span {
+	font-size: inherit;
+}
+
+#center-section-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* ==================================================
+    FOOTER STYLING
+================================================== */
+
+footer {
+	user-select: none;
+}
+
+/* ==================================================
+    SCREEN RESPONSIVENESS
+================================================== */
+
+@media screen and (max-width: 768px) {
+	.nav-links {
+		display: none;
+	}
+
+	.burger-btn {
+		display: block;
+	}
+}
