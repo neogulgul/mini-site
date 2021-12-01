@@ -64,13 +64,32 @@ header nav {
 	letter-spacing: 5px;
 }
 
-.nav-links {
+.nav-menu {
 	display: flex;
-	gap: 100px;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	position: absolute;
+	top: 50px;
+	left: 150%;
+	background-color: #fff;
+	transition: 0.5s;
+}
+
+.nav-menu.active {
+	left: -50%;
+}
+
+.nav-menu li{
+	padding: 50px 50vw;
+}
+
+.nav-menu li:hover {
+	background-color: #eee;
 }
 
 .burger-btn {
-	display: none;
+	display: block;
 	position: absolute;
 	right: 25px;
 	cursor: pointer;
@@ -131,6 +150,22 @@ span {
 	align-items: center;
 }
 
+.helpful {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.helpful p {
+	font-size: 24px;
+}
+
+.helpful svg {
+	cursor: pointer;
+	margin-left: 10px;
+}
+
 /* ==================================================
     FOOTER STYLING
 ================================================== */
@@ -143,12 +178,4 @@ footer {
     SCREEN RESPONSIVENESS
 ================================================== */
 
-@media screen and (max-width: 768px) {
-	.nav-links {
-		display: none;
-	}
-
-	.burger-btn {
-		display: block;
-	}
-}
+@media screen and (max-width: 768px) {}
