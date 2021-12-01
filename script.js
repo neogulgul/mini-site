@@ -11,8 +11,31 @@ function hamburgerMenu() {
 }
 
 // upvotes and downvotes
-const upVote = document.querySelector(".upvote");
-const downVote = document.querySelector(".downvote");
+const upvoteHollow = document.querySelector(".upvote-hollow");
+const upvoteFull = document.querySelector(".upvote-full");
+const downvoteHollow = document.querySelector(".downvote-hollow");
+const downvoteFull = document.querySelector(".downvote-full");
 
-upVote.addEventListener("click", () => upVote.classList.toggle("active"));
-downVote.addEventListener("click", () => downVote.classList.toggle("active"));
+upvoteHollow.addEventListener("click", () => {
+    upvoteHollow.classList.add("inactive");
+    upvoteFull.classList.remove("inactive");
+    downvoteHollow.classList.remove("inactive");
+    downvoteFull.classList.add("inactive");
+})
+
+upvoteFull.addEventListener("click", () => {
+    upvoteHollow.classList.remove("inactive");
+    upvoteFull.classList.add("inactive");
+})
+
+downvoteHollow.addEventListener("click", () => {
+    upvoteHollow.classList.remove("inactive");
+    upvoteFull.classList.add("inactive");
+    downvoteHollow.classList.add("inactive");
+    downvoteFull.classList.remove("inactive");
+})
+
+downvoteFull.addEventListener("click", () => {
+    downvoteHollow.classList.remove("inactive");
+    downvoteFull.classList.add("inactive");
+})
