@@ -17,7 +17,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Inter";
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 100%;
 	color: #000;
 	text-decoration: none;
@@ -25,12 +25,10 @@
 }
 
 body {
-	background: linear-gradient();
 	overflow-x: hidden;
 }
 
 body.no-scroll {
-	height: 100vh;
 	overflow: hidden;
 }
 
@@ -53,11 +51,7 @@ header {
 header nav {
 	display: flex;
 	flex: 100;
-	justify-content: center;
 	align-items: center;
-	max-width: 1250px;
-	margin: 0 auto;
-	padding: 0 25px;
 	position: relative;
 }
 
@@ -71,33 +65,13 @@ header nav {
 
 .nav-menu {
 	display: flex;
-	align-items: center;
-	flex-direction: column;
-	width: 100vw;
-	height: 100vh;
-	position: fixed;
-	top: 100px;
-	left: 100%;
-	background-color: #fff;
-	transition: 0.5s;
-}
-
-.nav-menu.active {
-	left: 0;
-}
-
-.nav-menu li {
-	width: 100%;
-	padding: 50px 0;
-	text-align: center;
-}
-
-.nav-menu li:hover {
-	background-color: #eee;
+	gap: 75px;
+	position: absolute;
+	right: 25px;
 }
 
 .burger-btn {
-	display: block;
+	display: none;
 	position: absolute;
 	right: 25px;
 	cursor: pointer;
@@ -129,10 +103,10 @@ header nav {
     MAIN STYLING
 ================================================== */
 
-main {
-	max-width: 1250px;
-	margin: 100px auto;
-	padding: 0 25px;
+main {}
+
+.main-content {
+	margin: 100px 0;
 }
 
 h1 {
@@ -164,12 +138,21 @@ span {
 	text-align: center;
 }
 
-.underline {
-	border-bottom: 2px solid #ccc;
+.hero-image {
+	width: 100%;
+	position: absolute;
+	top: -100px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index: -100;
 }
 
-.dragon {
-	width: 1000px;
+.gradient-text {
+	font-size: inherit;
+	background: linear-gradient(135deg, rgba(80,170,170,1) 0%, rgba(80,170,175,1) 25%, rgba(80,170,255,1) 50%, rgba(80,175,255,1) 75%, rgba(80,255,255,1) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 /* rating "system" */
@@ -199,12 +182,9 @@ span {
 ================================================== */
 
 footer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	width: 100%;
 	height: 100px;
-	border-top: 2px solid #ccc;
+	background-color: #000;
 	user-select: none;
 }
 
@@ -212,4 +192,45 @@ footer {
     SCREEN RESPONSIVENESS
 ================================================== */
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 1100px) {
+	.burger-btn {
+		display: block;
+	}
+
+	.nav-menu {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0;
+		width: 100vw;
+		height: calc(100% - 100px);
+		position: fixed;
+		top: 100px;
+		left: 100%;
+		background-color: #fff;
+		overflow-y: auto;
+		transition: 0.5s;
+	}
+
+	.nav-menu.active {
+		left: 0;
+	}
+
+	.nav-menu li a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 200px;
+		height: 100px;
+		margin: 50px;
+		padding: 25px;
+		border: 1px solid #000;
+		border-radius: 50px;
+		transition: 0.3s;
+	}
+
+	.nav-menu li a:hover {
+		background-color: #000;
+		color: #fff;
+	}
+}
