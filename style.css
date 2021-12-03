@@ -8,6 +8,12 @@
 	src: url(fonts/Bebas_Neue/BebasNeue-Regular.ttf);
 }
 
+:root {
+	--main-color: #e56b6f;
+	--main-color-faded: #e56b6f80;
+	--secondary-color: ;
+}
+
 /* ==================================================
     "RESET" STYLING
 ================================================== */
@@ -17,7 +23,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Inter";
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 100%;
 	color: #000;
 	text-decoration: none;
@@ -25,6 +31,7 @@
 }
 
 body {
+	background-color: #eee;
 	overflow-x: hidden;
 }
 
@@ -43,7 +50,6 @@ header {
 	height: 100px;
 	position: sticky;
 	top: 0;
-	border-bottom: 2px solid #ccc;
 	background-color: #fff;
 	user-select: none;
 }
@@ -52,6 +58,8 @@ header nav {
 	display: flex;
 	flex: 100;
 	align-items: center;
+	max-width: 1200px;
+	margin: 0 auto;
 	position: relative;
 }
 
@@ -60,7 +68,7 @@ header nav {
 	left: 25px;
 	font-family: "Bebas Neue";
 	font-size: 50px;
-	letter-spacing: 5px;
+	letter-spacing: 10px;
 }
 
 .nav-menu {
@@ -68,6 +76,22 @@ header nav {
 	gap: 75px;
 	position: absolute;
 	right: 25px;
+}
+
+.nav-menu a:hover:not(#sign-in) {
+	color: #00000080;
+}
+
+#sign-in {
+	padding: 10px 20px;
+	border-radius: 100px;
+	background-color: var(--main-color);
+	color: #fff;
+	transition: 0.3s;
+}
+
+#sign-in:hover {
+	background-color: var(--main-color-faded);
 }
 
 .burger-btn {
@@ -103,37 +127,146 @@ header nav {
     MAIN STYLING
 ================================================== */
 
-main {}
+main {
+	display: flex;
+	justify-content: center;
+	padding: 0 25px;
+}
+
+h1, h2 {
+	text-align: center;
+}
 
 h1 {
-	font-size: 2em;
-	margin-bottom: 25px;
+	font-size: 5em;
+	margin-bottom: 20px;
 }
 
 h2 {
 	font-size: 1.5em;
 }
 
-h3 {}
-
 p {
-	text-align: justify;
 	line-height: 125%;
 }
 
-p a {
-	text-decoration: 2px underline;
+a {
+	transition: 0.5s;
 }
 
 span {
 	font-size: inherit;
 }
 
-#center-section-content {
+.hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	background-image: linear-gradient(#00000000, #00000090), url(img/hero.jpg);
+	background-size: cover;
+	background-position: center;
+	width: 100vw;
+	height: 500px;
+	padding: 0 25px;
+	z-index: -1;
+}
+
+.hero h1, .hero p {
+	color: #fff;
+}
+
+.hero p {
+	margin: 25px 0;
+}
+
+.search-box {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.search-box svg {
+	position: absolute;
+	left: 10px;
+}
+
+.search-input {
+	padding: 10px 50px;
+	border: none;
+	border-radius: 50px;
+	outline: none;
+	user-select: none;
+}
+
+/* login page */
+
+.login-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: 100%;
+	max-width: 500px;
+	margin-top: 100px;
+	padding: 50px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+	background-color: #fff;
+}
+
+.login-container form {
+	display: flex;
+	flex-direction: column;
+}
+
+.login-container label {
+	margin: 25px 0 15px;
+}
+
+form {
+	width: inherit;
+	max-width: inherit;
+}
+
+input {
+	display: block;
+	width: 100%;
+	padding: 15px;
+	border: 1px solid #eee;
+	border-radius: 10px;
+	outline: none;
+}
+
+.submit {
+	margin: 50px 0 15px;
+	border: none;
+	background-color: var(--main-color);
+	color: #fff;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.submit:hover {
+	background-color: var(--main-color-faded);
+}
+
+.password {
+	display: flex;
+	justify-content: space-between;
+}
+
+.login-container a {
+	color: var(--main-color);
 	text-align: center;
+}
+
+.login-container a:hover {
+	color: var(--main-color-faded);
+}
+
+.login-container .poop{
+	margin-top: 50px;
 }
 
 /* ==================================================
@@ -141,25 +274,14 @@ span {
 ================================================== */
 
 footer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	padding: 50px;
 	user-select: none;
-}
-
-.social-icons {
-	display: flex;
-	gap: 100px;
 }
 
 /* ==================================================
     SCREEN RESPONSIVENESS
 ================================================== */
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1000px) {
 	.burger-btn {
 		display: block;
 	}
@@ -190,14 +312,31 @@ footer {
 		width: 200px;
 		height: 100px;
 		margin: 50px;
-		padding: 25px;
-		border: 1px solid #000;
+		background-color: #00000080;
 		border-radius: 50px;
 		transition: 0.3s;
 	}
 
-	.nav-menu li a:hover {
-		background-color: #000;
+	.nav-menu a:hover:not(#sign-in) {
+		background-color: #000000;
 		color: #fff;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	* {
+		font-size: 14px;
+	}
+
+	.logo {
+		display: none;
+	}
+
+	header nav {
+		justify-content: center;
+	}
+
+	.burger-btn {
+		position: static;
 	}
 }
