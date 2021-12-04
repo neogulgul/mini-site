@@ -24,7 +24,7 @@
 	box-sizing: border-box;
 	font-family: "Inter";
 	font-size: 16px;
-	line-height: 100%;
+	line-height: 125%;
 	color: #000;
 	text-decoration: none;
 	list-style: none;
@@ -133,10 +133,6 @@ main {
 	padding: 0 25px;
 }
 
-h1, h2 {
-	text-align: center;
-}
-
 h1 {
 	font-size: 5em;
 	margin-bottom: 20px;
@@ -215,22 +211,12 @@ span {
 	background-color: #fff;
 }
 
-.login-container form {
-	display: flex;
-	flex-direction: column;
-}
-
 .login-container label {
+	display: flex;
 	margin: 25px 0 15px;
 }
 
-form {
-	width: inherit;
-	max-width: inherit;
-}
-
-input {
-	display: block;
+.login-container input {
 	width: 100%;
 	padding: 15px;
 	border: 1px solid #eee;
@@ -238,7 +224,20 @@ input {
 	outline: none;
 }
 
-.submit {
+.password {
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.login-container a {
+	color: var(--main-color);
+}
+
+.login-container a:hover {
+	color: var(--main-color-faded);
+}
+
+.continue {
 	margin: 50px 0 15px;
 	border: none;
 	background-color: var(--main-color);
@@ -247,26 +246,12 @@ input {
 	transition: 0.3s;
 }
 
-.submit:hover {
+.continue:hover {
 	background-color: var(--main-color-faded);
 }
 
-.password {
-	display: flex;
-	justify-content: space-between;
-}
-
-.login-container a {
-	color: var(--main-color);
-	text-align: center;
-}
-
-.login-container a:hover {
-	color: var(--main-color-faded);
-}
-
-.login-container .poop{
-	margin-top: 50px;
+.no-account {
+	margin-bottom: 50px;
 }
 
 /* ==================================================
