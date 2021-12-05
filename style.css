@@ -224,6 +224,11 @@ span {
 	font-family: "Montserrat";
 }
 
+.product-name {
+	margin: 10px 0;
+	font-size: 1.2em;
+}
+
 .price-drop {
 	text-decoration: line-through;
 	color: #888;
