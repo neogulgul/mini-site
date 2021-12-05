@@ -16,7 +16,7 @@
 }
 
 /* ==================================================
-    "RESET" STYLING
+    UNIVERSAL STYLING
 ================================================== */
 
 * {
@@ -39,6 +39,42 @@ body {
 
 body.no-scroll {
 	overflow: hidden;
+}
+
+h1, h2, h3 {
+	font-family: "Montserrat";
+}
+
+h1 {
+	margin-bottom: 20px;
+	font-size: 5em;
+}
+
+h2 {
+	margin: 25px 0;
+	font-size: 2.5em;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+p {
+	line-height: 125%;
+}
+
+a {
+	transition: 0.5s;
+}
+
+span {
+	font-size: inherit;
+}
+
+input::placeholder {
+	color: #888;
 }
 
 /* ==================================================
@@ -80,7 +116,7 @@ header nav {
 	gap: 50px;
 }
 
-.nav-menu a:hover:not(#sign-in) {
+.nav-menu a:hover {
 	color: #00000080;
 }
 
@@ -92,30 +128,86 @@ header nav {
 	right: 50px;
 }
 
-#sign-in {
-	padding: 10px 20px;
-	border-radius: 100px;
-	background-color: var(--main-color);
-	color: #fff;
-	transition: 0.3s;
+.icons-wrapper svg {
+	fill: #888;
+	cursor: pointer;
 }
 
-#sign-in:hover {
-	background-color: var(--main-color-faded);
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    width: 0;
+    border-radius: 25px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.search-input {
+    display: none;
+    width: 100%;
+    padding: 15px 50px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+	background-color: #eee;
+    transition: 0.3s;
+}
+
+.search-wrapper.active {
+    width: 250px;
+}
+
+.search-input.active {
+    display: block;
+}
+
+.search-icon.active {
+	position: absolute;
+	left: 15px;
+}
+
+.clear {
+    display: none;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+}
+
+.clear::before, .clear::after {
+    content: '';
+    width: 1px;
+    height: 16px;
+    position: absolute;
+    right: 8px;
+    background-color: #888;
+}
+
+.clear::before {
+    transform: rotate(45deg);
+}
+
+.clear::after {
+    transform: rotate(-45deg);
+}
+
+.clear.active {
+    display: block;
 }
 
 .burger-btn {
 	display: none;
 	flex-direction: column;
-	gap: 6px;
+	gap: 5px;
 	cursor: pointer;
 	user-select: none;
 }
 
 .burger-layer {
-	width: 32px;
-	height: 4px;
-	border-radius: 4px;
+	width: 28px;
+	height: 3px;
+	border-radius: 3px;
 	background-color: #000;
 	transition: 0.3s;
 }
@@ -125,11 +217,11 @@ header nav {
 }
 
 .burger-btn.active .burger-layer:nth-child(1) {
-    transform: translateY(10px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
 }
 
 .burger-btn.active .burger-layer:nth-child(3) {
-    transform: translateY(-10px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* ==================================================
@@ -141,38 +233,6 @@ main section {
 	flex-direction: column;
 	align-items: center;
 	padding: 0 25px;
-}
-
-h1, h2, h3 {
-	font-family: "Montserrat";
-}
-
-h1 {
-	margin-bottom: 20px;
-	font-size: 5em;
-}
-
-h2 {
-	margin: 25px 0;
-	font-size: 2.5em;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-}
-
-h3 {
-	font-size: 1.5em;
-}
-
-p {
-	line-height: 125%;
-}
-
-a {
-	transition: 0.5s;
-}
-
-span {
-	font-size: inherit;
 }
 
 /* index/products page*/
@@ -237,8 +297,6 @@ span {
 /* contact page */
 
 /* about page */
-
-/* search page */
 
 /* cart page */
 
