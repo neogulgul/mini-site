@@ -10,17 +10,22 @@ function hamburgerMenu() {
     document.body.classList.toggle("no-scroll")
 }
 
-// search animation
-const searchWrapper = document.querySelector(".search-wrapper");
+// search
+const searchContainer = document.querySelector(".search-container");
 const searchInput = document.querySelector(".search-input");
 const searchIcon = document.querySelector(".search-icon");
 const clear = document.querySelector(".clear");
 
 searchIcon.addEventListener("click", search)
+clear.addEventListener("click", clearInput)
 
 function search() {
-    searchWrapper.classList.toggle("active");
+    searchContainer.classList.toggle("active");
     searchInput.classList.toggle("active");
     searchIcon.classList.toggle("active");
     clear.classList.toggle("active");
+}
+
+function clearInput() {
+    document.getElementById('search-input').value = '';
 }
