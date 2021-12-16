@@ -312,7 +312,7 @@ main section {
 	margin: 50px auto;
 	padding: 0 15px;
 	max-width: 1000px;
-	border-radius: 10px;
+	border-radius: 20px;
 	box-shadow: 0 0 10px 5px #bdbdbd50;
 	background-color: #fff;
 }
@@ -348,17 +348,17 @@ main section {
 	object-position: center;
 }
 
-.🧙‍♂️ {
+.🧙‍ {
 	display: flex;
 	flex-direction: column;
 }
 
-.add-subtract {
+.counter {
 	display: flex;
 	align-items: center;
 }
 
-.add-subtract div {
+.counter div {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -390,7 +390,8 @@ main section {
 }
 
 .checkout-btn:hover {
-	background-color: #bdbdbd;
+	border-color: var(--main-color);
+	background-color: var(--main-color);
 	color: #fff;
 }
 
