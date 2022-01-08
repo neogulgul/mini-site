@@ -8,17 +8,12 @@
 	src: url(fonts/Montserrat/Montserrat-Bold.ttf);
 }
 
-/*
-000
-fff
-eee
-bdbdbd
-*/
-
 :root {
-	--main-color: #000;
-	--secondary-color: ;
-	--accent-color:;
+	--background: #eee;
+	--background-alt: #fff;
+	--foreground: #000;
+	--foreground-alt: #888;
+	--accent: #bdbdbd;
 }
 
 /* ==================================================
@@ -39,7 +34,7 @@ bdbdbd
 }
 
 body {
-	background-color: #eee;
+	background-color: var(--background);
 	overflow-x: hidden;
 }
 
@@ -70,26 +65,20 @@ p {
 	line-height: 125%;
 }
 
-p a {
-	color: var(--main-color);
-}
-
 a {
 	transition: 0.3s;
 }
 
 a:hover {
-	opacity: 0.5;
+	opacity: 0.6;
 }
 
 span {
 	font-size: inherit;
 }
 
-strong {}
-
 input::placeholder {
-	color: #888;
+	color: var(--accent);
 }
 
 svg {
@@ -101,15 +90,11 @@ svg {
 	justify-content: center;
 	align-items: center;
 	padding: 15px 50px;
-	border: 1px solid #bdbdbd;
+	border: 1px solid var(--accent);
 	border-radius: 50px;
 	cursor: pointer;
 	user-select: none;
 	transition: 0.3s;
-}
-
-.btn:hover {
-	opacity: 0.6;
 }
 
 /* ==================================================
@@ -123,8 +108,8 @@ header {
 	height: 80px;
 	position: sticky;
 	top: 0;
-	border-bottom: 1px solid #bdbdbd;
-	background-color: #fff;
+	border-bottom: 1px solid var(--accent);
+	background-color: var(--background-alt);
 	user-select: none;
 	z-index: 1;
 }
@@ -151,10 +136,6 @@ header nav {
 	gap: 50px;
 }
 
-.nav-menu a:hover {
-	color: #00000080;
-}
-
 .icons-wrapper {
 	display: flex;
 	align-items: center;
@@ -164,7 +145,7 @@ header nav {
 }
 
 .icons-wrapper svg {
-	fill: #888;
+	fill: var(--accent);
 	cursor: pointer;
 }
 
@@ -195,7 +176,7 @@ header nav {
     border: none;
     border-radius: 50px;
     outline: none;
-	background-color: #eee;
+	background-color: var(--background);
     transition: 0.3s;
 }
 
@@ -223,7 +204,7 @@ header nav {
     height: 16px;
     position: absolute;
     right: 8px;
-    background-color: #888;
+    background-color: var(--accent);
 }
 
 .clear::before {
@@ -290,9 +271,6 @@ main section {
 	background-image: linear-gradient(#00000040, #00000080), url(img/hero.jpg);
 	background-size: cover;
 	background-position: center;
-}
-
-.hero h1, .hero p {
 	color: #fff;
 }
 
@@ -301,7 +279,6 @@ main section {
 }
 
 .hero .btn {
-	color: #fff;
 	border: none;
 	background: #00000050;
 }
@@ -326,7 +303,7 @@ main section {
 	height: 300px;
 	object-fit: cover;
 	object-position: center;
-	box-shadow: 0 0 10px 0 #bdbdbd;
+	box-shadow: 0 0 10px 0 var(--accent);
 }
 
 .product p {
@@ -340,7 +317,7 @@ main section {
 
 .price-drop {
 	text-decoration: line-through;
-	color: #888;
+	color: var(--accent);
 }
 
 /* cart page */
@@ -352,8 +329,8 @@ main section {
 	width: 100%;
 	padding: 25px;
 	border-radius: 25px;
-	background-color: #fff;
-	box-shadow: 0 0 10px 0 #bdbdbd;
+	background-color: var(--background-alt);
+	box-shadow: 0 0 10px 0 var(--accent);
 }
 
 .cart-info {
@@ -392,11 +369,11 @@ main section {
 	display: flex;
 	align-items: center;
 	padding: 20px 0;
-	border-top: 1px solid #bdbdbd;
+	border-top: 1px solid var(--accent);
 }
 
 .cart-product:last-child {
-	border-bottom: 1px solid #bdbdbd;
+	border-bottom: 1px solid var(--accent);
 }
 
 .info-product img {
@@ -425,11 +402,6 @@ main section {
 
 /* login page */
 
-.login-heading {
-	margin-top: 50px;
-	position: static;
-}
-
 .login-container {
 	display: flex;
 	flex-direction: column;
@@ -440,7 +412,7 @@ main section {
 	padding: 50px;
 	border-radius: 10px;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-	background-color: #fff;
+	background-color: var(--background-alt);
 }
 
 .login-container label {
@@ -451,7 +423,7 @@ main section {
 .login-container input {
 	width: 100%;
 	padding: 15px;
-	border: 1px solid #eee;
+	border: 1px solid var(--background);
 	border-radius: 10px;
 }
 
@@ -471,7 +443,7 @@ main section {
 .continue {
 	margin: 50px 0 15px;
 	border: none;
-	background-color: var(--main-color);
+	background-color: var(--foreground);
 	color: #fff;
 	cursor: pointer;
 	transition: 0.3s;
@@ -513,7 +485,7 @@ footer {
 		position: fixed;
 		top: 80px;
 		left: 100%;
-		background-color: #fff;
+		background-color: var(--background-alt);
 		overflow-y: auto;
 		transition: 0.5s;
 	}
@@ -529,24 +501,16 @@ footer {
 		width: 200px;
 		height: 100px;
 		margin: 50px;
-		background-color: #00000080;
 		border-radius: 50px;
-		transition: 0.3s;
-	}
-
-	.nav-menu a:hover:not(#sign-in) {
-		background-color: #000000;
 		color: #fff;
+		background-color: #000000;
+		transition: 0.3s;
 	}
 }
 
 @media screen and (max-width: 450px) {
 	* {
 		font-size: 14px;
-	}
-
-	.logo:not(.center) {
-		display: none;
 	}
 
 	header nav {
