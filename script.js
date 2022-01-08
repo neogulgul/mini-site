@@ -19,6 +19,9 @@ const clear = document.querySelector(".clear");
 searchIcon.addEventListener("click", search)
 clear.addEventListener("click", clearInput)
 
+document.querySelector("main").addEventListener("click", closeSearch);
+document.querySelector("footer").addEventListener("click", closeSearch);
+
 function search() {
     searchContainer.classList.toggle("active");
     searchInput.classList.toggle("active");
@@ -28,4 +31,11 @@ function search() {
 
 function clearInput() {
     document.getElementById('search-input').value = '';
+}
+
+function closeSearch() {
+    searchContainer.classList.remove("active");
+    searchInput.classList.remove("active");
+    searchIcon.classList.remove("active");
+    clear.classList.remove("active");
 }
