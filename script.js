@@ -27,6 +27,9 @@ function search() {
     searchInput.classList.toggle("active");
     searchIcon.classList.toggle("active");
     clear.classList.toggle("active");
+    burgerBtn.classList.remove("active");
+    navMenu.classList.remove("active");
+    document.body.classList.remove("no-scroll")
 }
 
 function clearInput() {
