@@ -8,6 +8,9 @@ function hamburgerMenu() {
     burgerBtn.classList.toggle("active");
     navMenu.classList.toggle("active");
     document.body.classList.toggle("no-scroll")
+    if (searchIcon.classList.contains("active")) {
+        closeSearch()
+    }
 }
 
 // search
