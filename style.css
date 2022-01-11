@@ -9,10 +9,6 @@
 }
 
 :root {
-	--background: #eee;
-	--background-alt: #fff;
-	--foreground: #000;
-	--foreground-alt: #888;
 	--accent: #bdbdbd;
 }
 
@@ -34,7 +30,7 @@
 }
 
 body {
-	background-color: var(--background);
+	background-color: #eee;
 	overflow-x: hidden;
 }
 
@@ -109,7 +105,7 @@ header {
 	position: sticky;
 	top: 0;
 	border-bottom: 1px solid var(--accent);
-	background-color: var(--background-alt);
+	background-color: #fff;
 	user-select: none;
 	z-index: 1;
 }
@@ -134,6 +130,26 @@ header nav {
 .nav-menu {
 	display: flex;
 	gap: 50px;
+}
+
+.nav-menu a {
+	position: relative;
+}
+
+.nav-menu a:after {
+	content: "";
+	display: block;
+	width: 0;
+	height: 2px;
+	position: absolute;
+	left: 50%;
+	background-color: #000;
+	transition: 0.3s;
+}
+
+.nav-menu a:hover:after {
+	width: 100%;
+	left: 0;
 }
 
 .icons-wrapper {
@@ -176,7 +192,7 @@ header nav {
     border: none;
     border-radius: 50px;
     outline: none;
-	background-color: var(--background);
+	background-color: #eee;
     transition: 0.3s;
 }
 
@@ -299,8 +315,8 @@ main section {
 }
 
 .product img {
-	width: 300px;
-	height: 300px;
+	width: 250px;
+	height: 250px;
 	object-fit: cover;
 	object-position: center;
 	box-shadow: 0 0 10px 0 var(--accent);
@@ -329,7 +345,7 @@ main section {
 	width: 100%;
 	padding: 25px;
 	border-radius: 25px;
-	background-color: var(--background-alt);
+	background-color: #fff;
 	box-shadow: 0 0 10px 0 var(--accent);
 }
 
@@ -412,7 +428,7 @@ main section {
 	padding: 50px;
 	border-radius: 10px;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-	background-color: var(--background-alt);
+	background-color: #fff;
 }
 
 .login-container label {
@@ -423,7 +439,7 @@ main section {
 .login-container input {
 	width: 100%;
 	padding: 15px;
-	border: 1px solid var(--background);
+	border: 1px solid #eee;
 	border-radius: 10px;
 }
 
@@ -443,7 +459,7 @@ main section {
 .continue {
 	margin: 50px 0 15px;
 	border: none;
-	background-color: var(--foreground);
+	background-color: #000;
 	color: #fff;
 	cursor: pointer;
 	transition: 0.3s;
@@ -485,7 +501,7 @@ footer {
 		position: fixed;
 		top: 80px;
 		left: 100%;
-		background-color: var(--background-alt);
+		background-color: #fff;
 		overflow-y: auto;
 		transition: 0.5s;
 	}
@@ -494,7 +510,7 @@ footer {
 		left: 0;
 	}
 
-	.nav-menu li a {
+	.nav-menu a {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -503,12 +519,16 @@ footer {
 		margin: 50px;
 		border-radius: 50px;
 		color: #fff;
-		background-color: #000000;
+		background-color: #000;
 		transition: 0.3s;
+	}
+
+	.nav-menu a:after {
+		display: none;
 	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 616px) {
 	.search-container {
 		padding: 0 10px;
 		position: fixed;
@@ -517,6 +537,7 @@ footer {
 		width: 100%;
 		height: 80px;
 		border-radius: 0;
+		background-color: #fff;
 	}
 
 	.search-container.active {
@@ -546,7 +567,7 @@ footer {
 
 @media screen and (max-width: 450px) {
 	* {
-		font-size: 14px;
+		font-size: 12px;
 	}
 
 	.logo {
