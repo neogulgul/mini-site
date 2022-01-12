@@ -30,12 +30,13 @@
 }
 
 body {
+	min-height: 100vh;
 	background-color: #eee;
 	overflow-x: hidden;
 }
 
 body.no-scroll {
-	overflow: hidden;
+	overflow-y: hidden;
 }
 
 h1, h2, h3 {
@@ -273,7 +274,7 @@ main section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 0 25px;
+	padding: 0 15px;
 }
 
 /* index/products page*/
@@ -299,6 +300,8 @@ main section {
 	background: #00000050;
 }
 
+/* products */
+
 .products-container {
 	display: flex;
 	justify-content: center;
@@ -320,6 +323,7 @@ main section {
 	object-fit: cover;
 	object-position: center;
 	box-shadow: 0 0 10px 0 var(--accent);
+	animation: fadein 3s;
 }
 
 .product p {
@@ -334,6 +338,18 @@ main section {
 .price-drop {
 	text-decoration: line-through;
 	color: var(--accent);
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+		transform: scale(0.3);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 /* cart page */
