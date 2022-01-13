@@ -292,11 +292,11 @@ main section {
 	justify-content: center;
 	flex-wrap: wrap;
 	gap: 50px;
-	animation: fadein 2s;
 }
 
 .product {
 	cursor: pointer;
+	animation: fadein 2s;
 }
 
 .product:hover {
@@ -450,11 +450,28 @@ main section {
 	padding: 15px;
 	border: 1px solid #eee;
 	border-radius: 10px;
+	transition: 0.3s;
 }
 
-.password {
+.login-container input:focus {
+	border-color: #000;
+}
+
+.login-container label[for="password"] {
 	justify-content: space-between;
 	flex-wrap: wrap;
+}
+
+.login-container input[type="submit"] {
+	margin: 50px 0 15px;
+	border: none;
+	background-color: #000;
+	color: #fff;
+	cursor: pointer;
+}
+
+.login-container input[type="submit"]:active {
+	opacity: 0.6;
 }
 
 .login-container a {
@@ -463,15 +480,6 @@ main section {
 
 .login-container a:hover, .continue:hover {
 	opacity: 0.6;
-}
-
-.continue {
-	margin: 50px 0 15px;
-	border: none;
-	background-color: #000;
-	color: #fff;
-	cursor: pointer;
-	transition: 0.3s;
 }
 
 .no-account {
@@ -505,12 +513,13 @@ footer {
 		flex-direction: column;
 		align-items: center;
 		gap: 0;
-		width: 100vw;
+		width: 100%;
 		height: calc(100% - 80px);
 		position: fixed;
 		top: 80px;
 		left: 100%;
 		background-color: #fff;
+		overflow-x: hidden;
 		overflow-y: auto;
 		transition: 0.5s;
 	}
