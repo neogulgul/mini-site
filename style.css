@@ -613,6 +613,11 @@ footer {
 		padding: 15px;
 	}
 
+	.cart svg {
+		width: 12px;
+		height: 12px;
+	}
+
 	.info-container div p {
 		margin: 0 5px;
 	}
